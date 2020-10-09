@@ -1,5 +1,11 @@
 # FluentDate
 
+[![Tests Action Status](https://github.com/ivandokov/fluentdate/workflows/Tests/badge.svg)](https://github.com/ivandokov/fluentdate/actions)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/ivandokov/fluentdate)](https://packagist.org/packages/ivandokov/fluentdate)
+[![Packagist Version](https://img.shields.io/packagist/v/ivandokov/fluentdate)](https://packagist.org/packages/ivandokov/fluentdate)
+[![Packagist Downloads](https://img.shields.io/packagist/dm/ivandokov/fluentdate)](https://packagist.org/packages/ivandokov/fluentdate)
+[![Packagist License](https://img.shields.io/packagist/l/ivandokov/fluentdate)](https://packagist.org/packages/ivandokov/fluentdate)
+
 Format PHP dates with ease. You don't have to Google the [format](https://www.php.net/manual/en/datetime.format.php) string each time. Use plain English to set the format, almost as you pronounce it.
 
 ## Installation
