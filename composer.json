@@ -23,6 +23,7 @@
         "nesbot/carbon": "^2.41"
     },
     "scripts": {
-        "tests": "pest"
+        "test": "pest",
+        "test-coverage": "pest --coverage"
     }
 }
