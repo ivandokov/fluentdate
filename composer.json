@@ -1,0 +1,27 @@
+{
+    "name": "ivandokov/fluentdate",
+    "description": "Library to format PHP dates",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Dokov",
+            "email": "ivan@jetspark.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "IvanDokov\\FluentDate\\": "src"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {},
+    "require-dev": {
+        "php": "^7.4.0",
+        "pestphp/pest": "^0.3.8"
+    },
+    "scripts": {
+        "tests": "pest"
+    }
+}
