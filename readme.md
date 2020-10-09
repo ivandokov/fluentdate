@@ -35,12 +35,12 @@ If you want to get the underlying date format string you can use the `->toFormat
 ```php
 $datetime = new DateTime('01.03.2020 00:00:00');
 $dateFormat = FluentDate::forDateTime(new DateTime('01.03.2020 00:00:00'))
-        ->year(new YearFourDigits())
-        ->separator(new SeparatorDot())
-        ->month(new MonthTwoDigitsWithLeadingZeros())
-        ->separator(new SeparatorDot())
-        ->day(new DayWithLeadingZero())
-        ->toFormat(); 
+    ->year(new YearFourDigits())
+    ->separator(new SeparatorDot())
+    ->month(new MonthTwoDigitsWithLeadingZeros())
+    ->separator(new SeparatorDot())
+    ->day(new DayWithLeadingZero())
+    ->toFormat(); 
 // Y.m.d
 ```
 
@@ -50,11 +50,11 @@ If you want to format a [Carbon](https://carbon.nesbot.com/) instance you can us
 ```php
 $carbon = Carbon::now();
 $dateFormat = FluentDate::forDateTime($carbon)
-                    ->year(new YearFourDigits())
-                    ->separator(new SeparatorDot())
-                    ->month(new MonthTwoDigitsWithLeadingZeros())
-                    ->separator(new SeparatorDot())
-                    ->day(new DayWithLeadingZero());
+    ->year(new YearFourDigits())
+    ->separator(new SeparatorDot())
+    ->month(new MonthTwoDigitsWithLeadingZeros())
+    ->separator(new SeparatorDot())
+    ->day(new DayWithLeadingZero());
 $carbon->format($dateFormat->toFormat());
 // 2020.10.09
 ```
