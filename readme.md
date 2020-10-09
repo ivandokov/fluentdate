@@ -44,7 +44,7 @@ $dateFormat = FluentDate::forDateTime(new DateTime('01.03.2020 00:00:00'))
 // Y.m.d
 ```
 
-### Formatting Carbon instance
+### Format Carbon
 If you want to format a [Carbon](https://carbon.nesbot.com/) instance you can use the same method described above.
 
 ```php
