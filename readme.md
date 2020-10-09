@@ -1,6 +1,6 @@
 # FluentDate
 
-Format PHP Dates with ease without the need to Google the format you want.
+Format PHP dates with ease. You don't have to Google the [format](https://www.php.net/manual/en/datetime.format.php) string each time. Use plain English to set the format, almost as you pronounce it.
 
 ## Installation
 
@@ -9,6 +9,8 @@ composer require ivandokov/fluentdate
 ```
 
 ## How to use
+
+For full details of how to use the library please take a look at our [tests](tests/FluentDateTest.php).
 
 ### Format DateTime
 ```php
@@ -25,8 +27,6 @@ echo "The formatted date is $date";
 ```
 
 The `$date` can be directly used in strings since it implements `__toString()` magic method but if you want you can use the `->toString()` method.
-
-For full details of how to use the class please take a look at our [tests](tests/FluentDateTest.php).
 
 ### The format string
 
