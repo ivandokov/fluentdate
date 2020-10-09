@@ -16,7 +16,7 @@ use IvanDokov\FluentDate\Formats\Contracts\YearFormatInterface;
 class FluentDate implements FluentDateInterface
 {
     protected DateTimeInterface $dateTime;
-    protected $output = [];
+    protected                   $formats = [];
 
     public function __construct(DateTimeInterface $dateTime)
     {
@@ -30,7 +30,7 @@ class FluentDate implements FluentDateInterface
 
     protected function addFormat(FormatInterface $format): FluentDateInterface
     {
-        $this->output[] = $format->format($this->dateTime);
+        $this->formats[] = $format;
 
         return $this;
     }
@@ -75,9 +75,24 @@ class FluentDate implements FluentDateInterface
         return $this->addFormat($format);
     }
 
+    public function toFormat(): string
+    {
+        $result = '';
+        foreach ($this->formats as $format) {
+            $result .= $format->getFormat();
+        }
+
+        return $result;
+    }
+
     public function toString(): string
     {
-        return implode('', $this->output);
+        $result = '';
+        foreach ($this->formats as $format) {
+            $result .= $format->format($this->dateTime);
+        }
+
+        return $result;
     }
 
     public function __toString(): string

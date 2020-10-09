@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\TimeFormatInterface;
 
-class TimeDaylight implements TimeFormatInterface
+class TimeDaylight extends BaseFormat implements TimeFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('I');
+        return 'I';
     }
 }

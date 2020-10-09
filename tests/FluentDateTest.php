@@ -405,3 +405,26 @@ test('formats multiple date parts with custom string separator', function () {
 
     $this->assertEquals('2020~03~01', $date);
 });
+
+test('gets underlying format string', function () {
+    $date = FluentDate::forDateTime(new DateTime('01.03.2020 00:00:00'))
+        ->year(new YearFourDigits())
+        ->separator(new SeparatorDot())
+        ->month(new MonthTwoDigitsWithLeadingZeros())
+        ->separator(new SeparatorDot())
+        ->day(new DayWithLeadingZero());
+
+    $this->assertEquals('Y.m.d', $date->toFormat());
+});
+
+test('formats Carbon instance', function () {
+    $carbon = Carbon\Carbon::instance(new DateTime('01.03.2020'));
+    $date = FluentDate::forDateTime($carbon)
+        ->year(new YearFourDigits())
+        ->separator(new SeparatorDot())
+        ->month(new MonthTwoDigitsWithLeadingZeros())
+        ->separator(new SeparatorDot())
+        ->day(new DayWithLeadingZero());
+
+    $this->assertEquals('2020.03.01', $carbon->format($date->toFormat()));
+});

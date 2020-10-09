@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\DayFormatInterface;
 
-class DayNumberZeroForSunday implements DayFormatInterface
+class DayNumberZeroForSunday extends BaseFormat implements DayFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('w');
+        return 'w';
     }
 }

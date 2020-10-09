@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\TimeFormatInterface;
 
-class Hour24WithoutLeadingZeros implements TimeFormatInterface
+class Hour24WithoutLeadingZeros extends BaseFormat implements TimeFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('G');
+        return 'G';
     }
 }

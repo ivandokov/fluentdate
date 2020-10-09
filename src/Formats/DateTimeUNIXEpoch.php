@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\DateTimeFormatInterface;
 
-class DateTimeUNIXEpoch implements DateTimeFormatInterface
+class DateTimeUNIXEpoch extends BaseFormat implements DateTimeFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('U');
+        return 'U';
     }
 }

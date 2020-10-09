@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\YearFormatInterface;
 
-class YearLeap implements YearFormatInterface
+class YearLeap extends BaseFormat implements YearFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('L');
+        return 'L';
     }
 }

@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\DayFormatInterface;
 
-class DaySuffix implements DayFormatInterface
+class DaySuffix extends BaseFormat implements DayFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('S');
+        return 'S';
     }
 }

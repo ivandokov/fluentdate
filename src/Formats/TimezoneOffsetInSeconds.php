@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\TimezoneFormatInterface;
 
-class TimezoneOffsetInSeconds implements TimezoneFormatInterface
+class TimezoneOffsetInSeconds extends BaseFormat implements TimezoneFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('Z');
+        return 'Z';
     }
 }

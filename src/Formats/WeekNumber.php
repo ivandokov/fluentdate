@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\WeekFormatInterface;
 
-class WeekNumber implements WeekFormatInterface
+class WeekNumber extends BaseFormat implements WeekFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('W');
+        return 'W';
     }
 }

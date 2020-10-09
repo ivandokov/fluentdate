@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\MonthFormatInterface;
 
-class MonthFullName implements MonthFormatInterface
+class MonthFullName extends BaseFormat implements MonthFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('F');
+        return 'F';
     }
 }

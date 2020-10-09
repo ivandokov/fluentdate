@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\TimezoneFormatInterface;
 
-class TimezoneGMTDifferenceWithColon implements TimezoneFormatInterface
+class TimezoneGMTDifferenceWithColon extends BaseFormat implements TimezoneFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('P');
+        return 'P';
     }
 }

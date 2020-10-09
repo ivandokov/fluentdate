@@ -19,7 +19,8 @@
     "require": {},
     "require-dev": {
         "php": "^7.4.0",
-        "pestphp/pest": "^0.3.8"
+        "pestphp/pest": "^0.3.8",
+        "nesbot/carbon": "^2.41"
     },
     "scripts": {
         "tests": "pest"

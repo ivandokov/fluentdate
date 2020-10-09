@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\TimeFormatInterface;
 
-class TimeAmPmLowercase implements TimeFormatInterface
+class TimeAmPmLowercase extends BaseFormat implements TimeFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('a');
+        return 'a';
     }
 }

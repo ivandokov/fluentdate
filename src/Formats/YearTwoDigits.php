@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\YearFormatInterface;
 
-class YearTwoDigits implements YearFormatInterface
+class YearTwoDigits extends BaseFormat implements YearFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('y');
+        return 'y';
     }
 }

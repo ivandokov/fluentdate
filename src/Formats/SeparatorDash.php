@@ -2,12 +2,11 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\SeparatorFormatInterface;
 
-class SeparatorDash implements SeparatorFormatInterface
+class SeparatorDash extends BaseFormat implements SeparatorFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
         return '-';
     }

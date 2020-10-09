@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\DateTimeFormatInterface;
 
-class DateTimeISO8601 implements DateTimeFormatInterface
+class DateTimeISO8601 extends BaseFormat implements DateTimeFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('c');
+        return 'c';
     }
 }

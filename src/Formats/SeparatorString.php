@@ -2,10 +2,9 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\SeparatorFormatInterface;
 
-class SeparatorString implements SeparatorFormatInterface
+class SeparatorString extends BaseFormat implements SeparatorFormatInterface
 {
     protected string $separator;
 
@@ -14,7 +13,7 @@ class SeparatorString implements SeparatorFormatInterface
         $this->separator = $separator;
     }
 
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
         return $this->separator;
     }

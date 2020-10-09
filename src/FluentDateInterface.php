@@ -34,6 +34,8 @@ interface FluentDateInterface
 
     public function separator(SeparatorFormatInterface $format): self;
 
+    public function toFormat(): string;
+
     public function toString(): string;
 
     public function __toString(): string;

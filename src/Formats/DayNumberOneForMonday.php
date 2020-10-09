@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\DayFormatInterface;
 
-class DayNumberOneForMonday implements DayFormatInterface
+class DayNumberOneForMonday extends BaseFormat implements DayFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('N');
+        return 'N';
     }
 }

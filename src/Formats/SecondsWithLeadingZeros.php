@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\MinuteFormatInterface;
 
-class SecondsWithLeadingZeros implements MinuteFormatInterface
+class SecondsWithLeadingZeros extends BaseFormat implements MinuteFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('s');
+        return 's';
     }
 }

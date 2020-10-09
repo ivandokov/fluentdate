@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\MonthFormatInterface;
 
-class MonthNumberOfDays implements MonthFormatInterface
+class MonthNumberOfDays extends BaseFormat implements MonthFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('t');
+        return 't';
     }
 }

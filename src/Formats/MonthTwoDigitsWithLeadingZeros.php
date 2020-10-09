@@ -2,13 +2,12 @@
 
 namespace IvanDokov\FluentDate\Formats;
 
-use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\MonthFormatInterface;
 
-class MonthTwoDigitsWithLeadingZeros implements MonthFormatInterface
+class MonthTwoDigitsWithLeadingZeros extends BaseFormat implements MonthFormatInterface
 {
-    public function format(DateTimeInterface $dateTime): string
+    public function getFormat(): string
     {
-        return $dateTime->format('m');
+        return 'm';
     }
 }
