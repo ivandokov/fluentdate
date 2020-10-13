@@ -18,6 +18,22 @@ composer require ivandokov/fluentdate
 
 For full details of how to use the library please take a look at our [tests](tests/FluentDateTest.php).
 
+### Format string
+
+Any string that can be parsed by `DateTime` class can be used.
+
+```php
+$date = FluentDate::forString('now')
+    ->year(new YearFourDigits())
+    ->separator(new SeparatorDot())
+    ->month(new MonthTwoDigitsWithLeadingZeros())
+    ->separator(new SeparatorDot())
+    ->day(new DayWithLeadingZero()); 
+
+echo "Today is $date";
+//    Today is 2020.10.09
+```
+
 ### Format DateTime
 ```php
 $datetime = new DateTime('now'); // The DateTime you want to format
@@ -28,8 +44,8 @@ $date = FluentDate::forDateTime($datetime)
     ->separator(new SeparatorDot())
     ->day(new DayWithLeadingZero()); 
 
-echo "The formatted date is $date";
-//    The formatted date is 2020.10.09
+echo "Today is $date";
+//    Today is 2020.10.09
 ```
 
 The `$date` can be directly used in strings since it implements `__toString()` magic method but if you want you can use the `->toString()` method.

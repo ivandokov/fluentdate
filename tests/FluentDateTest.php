@@ -52,6 +52,19 @@ test('date can be casted to a string', function () {
     $this->assertEquals('', (string)$date);
 });
 
+test('date can initialised with a string', function () {
+    $date = FluentDate::forString('now');
+    $dateReflection = new ReflectionClass($date);
+    $datetime = $dateReflection->getProperty('datetime');
+    $datetime->setAccessible(true);
+
+    $format = 'Y.m.d H:i:s';
+    $this->assertEquals(
+        (new DateTime('now'))->format($format),
+        $datetime->getValue($date)->format($format)
+    );
+});
+
 test('formats four digits year', function () {
     $date = FluentDate::forDateTime(new DateTime('01.01.2020'))
         ->year(new YearFourDigits());

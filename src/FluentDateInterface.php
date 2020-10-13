@@ -14,9 +14,11 @@ use IvanDokov\FluentDate\Formats\Contracts\YearFormatInterface;
 
 interface FluentDateInterface
 {
-    public function __construct(DateTimeInterface $dateTime);
+    public function __construct(DateTimeInterface $datetime);
 
     public static function forDateTime(DateTimeInterface $date): self;
+
+    public static function forString(string $date): self;
 
     public function year(YearFormatInterface $format): self;
 

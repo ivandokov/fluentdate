@@ -2,6 +2,7 @@
 
 namespace IvanDokov\FluentDate;
 
+use DateTime;
 use DateTimeInterface;
 use IvanDokov\FluentDate\Formats\Contracts\DayFormatInterface;
 use IvanDokov\FluentDate\Formats\Contracts\FormatInterface;
@@ -15,17 +16,22 @@ use IvanDokov\FluentDate\Formats\Contracts\YearFormatInterface;
 
 class FluentDate implements FluentDateInterface
 {
-    protected DateTimeInterface $dateTime;
+    protected DateTimeInterface $datetime;
     protected                   $formats = [];
 
-    public function __construct(DateTimeInterface $dateTime)
+    public function __construct(DateTimeInterface $datetime)
     {
-        $this->dateTime = $dateTime;
+        $this->datetime = $datetime;
     }
 
     public static function forDateTime(DateTimeInterface $date): FluentDateInterface
     {
         return new static($date);
+    }
+
+    public static function forString(string $date): FluentDateInterface
+    {
+        return new static(new DateTime($date));
     }
 
     protected function addFormat(FormatInterface $format): FluentDateInterface
@@ -89,7 +95,7 @@ class FluentDate implements FluentDateInterface
     {
         $result = '';
         foreach ($this->formats as $format) {
-            $result .= $format->format($this->dateTime);
+            $result .= $format->format($this->datetime);
         }
 
         return $result;
