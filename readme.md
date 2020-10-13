@@ -55,13 +55,13 @@ If you want to format a [Carbon](https://carbon.nesbot.com/) instance you can us
 
 ```php
 $carbon = Carbon::now();
-$dateFormat = FluentDate::forDateTime($carbon)
+$date = FluentDate::forDateTime($carbon)
     ->year(new YearFourDigits())
     ->separator(new SeparatorDot())
     ->month(new MonthTwoDigitsWithLeadingZeros())
     ->separator(new SeparatorDot())
-    ->day(new DayWithLeadingZero());
-$carbon->format($dateFormat->toFormat());
+    ->day(new DayWithLeadingZero())
+    ->toString();
 // 2020.10.09
 ```
 

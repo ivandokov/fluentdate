@@ -426,5 +426,5 @@ test('formats Carbon instance', function () {
         ->separator(new SeparatorDot())
         ->day(new DayWithLeadingZero());
 
-    $this->assertEquals('2020.03.01', $carbon->format($date->toFormat()));
+    $this->assertEquals('2020.03.01', $date);
 });
