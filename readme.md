@@ -56,7 +56,7 @@ If you want to get the underlying date format string you can use the `->toFormat
 
 ```php
 $datetime = new DateTime('01.03.2020 00:00:00');
-$dateFormat = FluentDate::forDateTime(new DateTime('01.03.2020 00:00:00'))
+$dateFormat = FluentDate::forDateTime($datetime)
     ->year(new YearFourDigits())
     ->separator(new SeparatorDot())
     ->month(new MonthTwoDigitsWithLeadingZeros())
