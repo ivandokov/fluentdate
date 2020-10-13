@@ -67,7 +67,7 @@ $dateFormat = FluentDate::forDateTime($datetime)
 ```
 
 ### Format Carbon
-If you want to format a [Carbon](https://carbon.nesbot.com/) instance you can use the same method described above.
+If you want to format a [Carbon](https://carbon.nesbot.com/) instance you can use the same method described above since Carbon is extending `DateTime`.
 
 ```php
 $carbon = Carbon::now();
